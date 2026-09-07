@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #08070c;
+    --bg-card: rgba(15, 14, 23, 0.75);
+    --border-gold: rgba(223, 177, 91, 0.25);
+    --glow-gold: rgba(223, 177, 91, 0.4);
+    --glow-cyan: rgba(45, 212, 191, 0.35);
+    --glow-purple: rgba(168, 85, 247, 0.35);
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    font-family: 'Outfit', sans-serif;
+    color: #e2e8f0;
+  }
+
+  h1, h2, h3, .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08070c;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(223, 177, 91, 0.3);
+  border-radius: 4px;
+  border: 1px solid rgba(223, 177, 91, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(223, 177, 91, 0.6);
+}
+
+/* Custom Utilities for Arcane Aesthetics */
+.arcane-card {
+  background: linear-gradient(135deg, rgba(17, 16, 26, 0.8) 0%, rgba(10, 9, 15, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(223, 177, 91, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px 0 rgba(223, 177, 91, 0.05);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arcane-card:hover {
+  border-color: rgba(223, 177, 91, 0.5);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7), 0 0 25px 0 rgba(223, 177, 91, 0.15), inset 0 0 15px 0 rgba(223, 177, 91, 0.05);
+  transform: translateY(-2px);
+}
+
+.arcane-card-cyan {
+  background: linear-gradient(135deg, rgba(12, 22, 28, 0.8) 0%, rgba(8, 14, 18, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px 0 rgba(45, 212, 191, 0.05);
+  transition: all 0.3s ease;
+}
+
+.arcane-card-cyan:hover {
+  border-color: rgba(45, 212, 191, 0.6);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7), 0 0 25px 0 rgba(45, 212, 191, 0.2);
+  transform: translateY(-2px);
+}
+
+.arcane-gold-text {
+  background: linear-gradient(135deg, #fff2cb 0%, #dfb15b 50%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(223, 177, 91, 0.3));
+}
+
+.arcane-cyan-text {
+  background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 50%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
+}
+
+.arcane-purple-text {
+  background: linear-gradient(135deg, #f3e8ff 0%, #c084fc 50%, #7e22ce 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.3));
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(223, 177, 91, 0.4);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.4);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
